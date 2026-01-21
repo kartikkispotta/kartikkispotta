@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Anchal 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Cute Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Quicksand',sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* Background video */
+#bgVideo{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(18px) brightness(.55);
+  z-index:-1;
+  transform:scale(1.1);
+}
+
+/* Sections */
+section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+.glass{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(20px);
+  border-radius:30px;
+  padding:35px;
+  max-width:900px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 0 50px rgba(255,120,170,.35);
+}
+
+/* Typing title */
+.title{
+  font-family:'Great Vibes',cursive;
+  font-size:64px;
+  white-space:nowrap;
+  overflow:hidden;
+  border-right:3px solid pink;
+  width:0;
+  animation:typing 3.5s steps(30,end) forwards, blink .8s infinite;
+}
+@keyframes typing{to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+button{
+  margin-top:25px;
+  padding:12px 32px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  background:#ff5c8a;
+  color:white;
+  cursor:pointer;
+}
+
+/* Images */
+img{
+  width:160px;
+  border-radius:20px;
+  margin:12px;
+}
+
+/* Fade up */
+.fadeUp{
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp .8s forwards;
+}
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Envelope */
+.envelope{
+  width:280px;
+  height:180px;
+  background:#ffb6c1;
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:60px;
+  cursor:pointer;
+  margin:0 auto 20px;
+}
+.letter{
+  display:none;
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+  animation:fadeUp 1s forwards;
+}
+
+/* Photo grid */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* NO button prank */
+#no{position:relative}
+</style>
+</head>
+
+<body>
+
+<!-- Background Video -->
+<video id="bgVideo" autoplay muted loop playsinline>
+  <source src="https://drive.google.com/uc?export=download&id=1MQL7gvbm9WlfWE-BUqNxrqQ03nhnNtEy" type="video/mp4">
+</video>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="https://drive.google.com/uc?export=download&id=1NzNDnTSr5Q2hQM40plDcs2EosqkL_tT3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click",()=>{
+  document.getElementById("bgMusic").play().catch(()=>{});
+},{once:true});
+</script>
+
+<!-- PAGE 1 -->
+<section>
+  <div class="glass">
+    <h1 class="title">Happy Birthday Anchal 💖💞</h1>
+    <img src="https://drive.google.com/uc?export=view&id=1vUdTaFKMNggS3OTbXd5WMKOYEx-jb9xp">
+    <button onclick="next()">Click to continue</button>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section>
+  <div class="glass">
+    <div class="envelope" onclick="openLetter()">💌</div>
+    <div class="letter" id="letter">
+      I made this for my cutiee piee 💖<br><br>
+      Happy birthday my dear pyaari si bachchi 🥺  
+      I love you so much.  
+      I hope you will achieve all of your dreams and this year brings lots of happiness and love to you.
+    </div>
+    <button onclick="next()">Next</button>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section>
+  <div class="glass">
+    <img src="https://drive.google.com/uc?export=view&id=1nWTh_P1PHcJNymGYKETQ33gMINLldanN">
+    <p>You remember when we first meet 🤭</p>
+    <button onclick="next()">Yessss</button>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section>
+  <div class="glass">
+    <img src="https://drive.google.com/uc?export=view&id=13EzRQgCBWl7PdP00dYUIITGM9ajH42au">
+    <p>That’s our very first pic 🤭💖</p>
+    <button onclick="next()">Next</button>
+  </div>
+</section>
+
+<!-- PAGE 5 -->
+<section>
+  <div class="glass">
+    <h2>Some of your cute pics 😭💗</h2>
+    <div class="grid" id="set1"></div>
+    <p id="afterMsg" style="opacity:0;margin-top:20px">
+      We really look cute together 💞
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
+</section>
+
+<!-- PAGE 6 -->
+<section>
+  <div class="glass">
+    <h2>Some more pics of us 💞🫶</h2>
+    <div class="grid" id="set2"></div>
+    <button onclick="next()">Next</button>
+  </div>
+</section>
+
+<!-- PAGE 7 -->
+<section>
+  <div class="glass">
+    <p>I love you so much ❤️ happiest birthday to my prettiest babbyyyy 😭💖</p>
+    <p class="fadeUp" style="margin-top:80px">
+      I know tum kitne dino se bol rho ho so finally 😗👉👈
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
+</section>
+
+<!-- PAGE 8 -->
+<section>
+  <div class="glass">
+    <h1>Will you be my Valentine 🤧💗</h1>
+    <p>please don’t click no 🥺</p>
+    <button onclick="yes()">YES 💞</button>
+    <button id="no">NO 😏</button>
+  </div>
+</section>
+
+<script>
+let page=0;
+function next(){
+  page++;
+  document.querySelectorAll("section")[page]
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function openLetter(){
+  document.getElementById("letter").style.display="block";
+}
+
+/* NO button */
+const no=document.getElementById("no");
+no.onmouseover=()=>{
+  no.style.position="absolute";
+  no.style.left=Math.random()*70+"vw";
+  no.style.top=Math.random()*70+"vh";
+};
+
+function yes(){
+  document.body.innerHTML=
+  `<div style="height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;font-size:40px">
+    She said YES 😭💖
+  </div>`;
+}
+
+/* Sequential photos */
+const set1=[
+"1MCOycA0RcWJyorI8p6JerGIPIodaE9Jf",
+"1oYY0Asx0sMRAwtgP9m61QZI9YK2y8Ixx",
+"1PtsUcHldij683jVjJciOi1fOJPjdzJB6",
+"1_FnJ-moVDWK_4w9rsYMdR_T8AZkd70TO",
+"1SV4BCUyjr95XFwCS5xGe-y8j3RtunGRE",
+"1x150gqOrcdCRaKf36yjrXjpzXn_WOgfk"
+];
+
+set1.forEach((id,i)=>{
+  setTimeout(()=>{
+    const img=document.createElement("img");
+    img.src=`https://drive.google.com/uc?export=view&id=${id}`;
+    img.className="fadeUp";
+    document.getElementById("set1").appendChild(img);
+    if(i===5) document.getElementById("afterMsg").style.opacity=1;
+  },i*600);
+});
+
+const set2=[
+"1fub80yL91kX58HWf6SpoNI5p8lN2MDxF",
+"193dr4ZZ7gYudhhr89nhuui-Yh57QCx0G",
+"1NTxMBhe6kY0dMitmoyWZ5Up1_KDKuor7",
+"11l8Fe4tqVMRzwl2XwU_xosOxQ4stq629",
+"1XT9biNzyfsDxm2xi5iJ3dsMb0O2hM19I",
+"17EbMMbe-onJQ5SiQdn_Rs9OR1Dgk47cb"
+];
+
+set2.forEach((id,i)=>{
+  setTimeout(()=>{
+    const img=document.createElement("img");
+    img.src=`https://drive.google.com/uc?export=view&id=${id}`;
+    img.className="fadeUp";
+    document.getElementById("set2").appendChild(img);
+  },i*600);
+});
+</script>
+
+</body>
+</html>
